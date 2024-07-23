@@ -1,0 +1,23 @@
+Instructions: Your name: Brian Janes
+You are allowed to complete the assessment problems below in whatever way you can but please answer the following questions/points as part of your submission:
+
+How many hours did it take you to complete this assessment? (Please keep try to keep track of how many hours you have spent working on each individual part of this assessment as best you can - an estimation is fine; we just want a rough idea.)
+
+Answer: [I think this took me 2 - 3 hours. I am very lucky that I have a solid existing knowledge of react.]
+
+What online resources you have used? (My lectures, YouTube, Stack overflow etc.)
+
+Answer: [I referenced our class project for some understanding of layout, and I think stackOverflow, and i used chat GPT to help with the colours. I just gave it a palette and got it to apply it because I was curious how well it could do that (and i am not great at this aspect of design)]
+
+Did you need to ask any of your friends in solving the problems. (If yes, please mention name of the friend. They must be amongst your class fellows.)
+
+Answer: [I did not, though as of right now Kyle and Brad and I plan to just get together to look at each other's projects and chat about it all.]
+
+Did you need to ask questions to any of your instructors? If so, how many questions did you ask (or how many help sessions did you require)?
+
+Answer: [I did not.]
+
+
+Rate (subjectively) the difficulty of Making this all! from your own perspective, and whether you feel confident that you can solve a similar but different problem requiring some of the same techniques in the future now that you’ve completed this one.
+
+Answer: [I thought this was particularly easy, but I may be an outlier. I finished most of this right after you handed out the assignment in 1-2 hours, and I am coming back several days later and I intend to add a mocal to display the picture of the dog when it's clicked!]
