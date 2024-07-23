@@ -1,0 +1,362 @@
+/* A pre-made CSS reset from Josh W. Comeau */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Creating some variables for colour palatte & styles I intend to reuse later */
+:root {
+  --color-darkest: #0d1b2a;
+  --color-dark: #1b263b;
+  --color-medium: #415a77;
+  --color-light: #778da9;
+  --color-lightest: #e0e1dd;
+
+  --font-family: "Inter", sans-serif;
+  --border-radius: 4px;
+  --transition-speed: 0.1s;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-family);
+  color: var(--color-lightest);
+  background-color: var(--color-darkest);
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Header CSS */
+header {
+  width: 100%;
+  background-color: var(--color-dark);
+  color: var(--color-lightest);
+  height: 62px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--color-medium);
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+/* Footer CSS */
+footer {
+  width: 100%;
+  background-color: var(--color-dark);
+  color: var(--color-lightest);
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid var(--color-medium);
+  position: relative;
+  bottom: 0;
+  left: 0;
+}
+
+footer p {
+  font-size: 0.8rem;
+}
+
+/* Main Content for App CSS */
+.main-content {
+  width: calc(100% - 8rem);
+  height: 1200dhv;
+  margin-inline: auto;
+  min-height: calc(100vh - 110px);
+  border: 1px solid var(--color-medium);
+  background-color: var(--color-dark);
+  border-radius: var(--border-radius);
+  margin: 2rem 1rem;
+  position: ab;
+}
+
+.options-bar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: var(--color-medium);
+  border-bottom: 1px solid var(--color-light);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.option {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.option h2 {
+  color: var(--color-lightest);
+  margin-bottom: 8px;
+}
+
+.option button {
+  padding: 16px 32px;
+  border-radius: var(--border-radius);
+  border: none;
+  background-color: var(--color-dark);
+  color: var(--color-lightest);
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease-in-out;
+  font-weight: bold;
+}
+
+.option button:hover {
+  background-color: var(--color-medium);
+  border: 1px solid var(--color-light);
+  box-shadow: var(--box-shadow);
+  color: var(--color-darkest);
+}
+
+/* Number of images Input CSS */
+input[type="number"] {
+  width: 80px;
+  padding: 8px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-light);
+  background-color: var(--color-dark);
+  color: var(--color-lightest);
+  justify-content: center;
+  text-align: center;
+}
+
+/* BreedSelector CSS */
+.breed-selector {
+  position: relative;
+  width: 240px;
+}
+
+.breed-selector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: var(--color-dark);
+  border: 1px solid var(--color-light);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--transition-speed) ease-in-out;
+}
+
+.breed-selector-header:hover {
+  background-color: var(--color-medium);
+}
+
+.breed-selector.open .breed-selector-header {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.breed-selector-text {
+  font-size: 16px;
+  color: var(--color-lightest);
+}
+
+.breed-selector-icon {
+  color: var(--color-lightest);
+  transition: transform var(--transition-speed) ease-in-out;
+}
+
+.breed-selector-icon.open {
+  transform: rotate(180deg);
+}
+
+.breed-selector-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--color-dark);
+  border: 1px solid var(--color-light);
+  border-top: none;
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.breed-selector-options li {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease-in-out;
+}
+
+.breed-selector-options li:hover {
+  background-color: var(--color-medium);
+}
+
+.breed-selector-options li.selected {
+  background-color: var(--color-light);
+  color: var(--color-darkest);
+  font-weight: bold;
+}
+
+/* Image gallery CSS */
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.image-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.image-gallery img:hover {
+  transform: scale(1.025);
+  transition: transform var(--transition-speed) ease-in-out;
+  cursor: pointer;
+}
+
+/* MODAL CSS */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-content {
+  position: relative;
+  background-color: var(--color-dark);
+  padding: 16px 32px;
+  border-radius: var(--border-radius);
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-lightest);
+}
+
+.modal-close:hover {
+  transform: scale(1.2);
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 80vh;
+  margin: 24px auto;
+  border: 2px solid var(--color-light);
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  header {
+    height: 48px;
+  }
+  .main-content {
+    width: calc(100% - 2rem);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header {
+    height: 32px;
+  }
+  .options-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .option {
+    margin-bottom: 16px;
+  }
+  .breed-selector {
+    width: 100%;
+  }
+}
